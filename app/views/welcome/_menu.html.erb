@@ -1,0 +1,8 @@
+<ul>
+  <% @tables.each do |table| %>
+    <li>
+      <a href = <%= 'http://localhost:3000/welcome/' + table.camelcase %>><%= table.camelcase %> </a>
+      <span></span>
+    </li>
+  <% end %>
+</ul>

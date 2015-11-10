@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_album: MyString
+  released: 2015-10-29
+
+two:
+  name_album: MyString
+  released: 2015-10-29

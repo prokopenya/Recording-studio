@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@-webkit-keyframes wave {
+  to {
+    height: 100%;
+  }
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.logo {
+  position: relative;
+  width: 650px;
+  margin: 10px auto;
+}
+
+.text {
+  font-family: "Oswald";
+  color: gray;
+  text-transform: uppercase;
+  text-align: center;
+}
+.text p {
+  margin: 5;
+  padding: 0;
+}
+.text .soundbyte {
+  font-size: 72px;
+}
+.text .studios {
+  font-size: 72px;
+}
+
+.bars {
+  height: 250px;
+  width: 107%;
+  /* background: yellow; */
+}
+.bars .bar {
+  display: inline-block;
+  width: 8%;
+  height: 100%;
+  margin-right: 2%;
+  margin-left: -4px;
+  background: gray;
+  vertical-align: bottom;
+}
+.bars .bar:first-of-type {
+  margin-left: 1%;
+}
+.bars .bar:last-of-type {
+  margin-right: 1%;
+}
+.bars .bar:nth-of-type(1) {
+  height: 100%;
+  -webkit-animation: wave 3s infinite linear alternate;
+}
+.bars .bar:nth-of-type(2) {
+  height: 81.11%;
+  -webkit-animation: wave 2s infinite linear alternate;
+}
+.bars .bar:nth-of-type(3) {
+  height: 93.33%;
+  -webkit-animation: wave 1s infinite linear alternate;
+}
+.bars .bar:nth-of-type(4) {
+  height: 66.66%;
+  -webkit-animation: wave 1.4s infinite linear alternate;
+}
+.bars .bar:nth-of-type(5) {
+  height: 100%;
+  -webkit-animation: wave 3s infinite linear alternate;
+}
+.bars .bar:nth-of-type(6) {
+  height: 81.11%;
+  -webkit-animation: wave 1s infinite linear alternate;
+}
+.bars .bar:nth-of-type(7) {
+  height: 87.77%;
+  -webkit-animation: wave 2s infinite linear alternate;
+}
+.bars .bar:nth-of-type(8) {
+  height: 61.11%;
+  -webkit-animation: wave 1.5s infinite linear alternate;
+}
+.bars .bar:nth-of-type(9) {
+  height: 81.11%;
+  -webkit-animation: wave 3s infinite linear alternate;
+}
+.bars .bar:nth-of-type(10) {
+  height: 90%;
+  -webkit-animation: wave 3s infinite linear alternate;
+}

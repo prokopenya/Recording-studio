@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_of_midia: MyString
+  type_of_media: MyString
+  price_ofrecord: 
+  max_duration: 2015-10-29 19:54:42
+  capacity_of_media: 
+
+two:
+  name_of_midia: MyString
+  type_of_media: MyString
+  price_ofrecord: 
+  max_duration: 2015-10-29 19:54:42
+  capacity_of_media: 
