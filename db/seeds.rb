@@ -111,9 +111,16 @@
 
 
 
-    Carrier.create(name: "carrier1",                type_carrier: "Disk CD",          price_of_record: 500,   max_duration: "01:20:00", capacity: 700)
-    Carrier.create(name: "carrier2",                type_carrier: "Disk DVD",         price_of_record: 1500,  max_duration: "08:00:00", capacity: 4700)
-    Carrier.create(name: "carrier3",                type_carrier: "Flash Drive 8gb",  price_of_record: 3000,  max_duration: "13:33:33", capacity: 8000)
-    Carrier.create(name: "carrier4",                type_carrier: "Flash Drive 16gb", price_of_record: 6000,  max_duration: "13:33:33", capacity: 16000)
-    Carrier.create(name: "carrier5",                type_carrier: "Flash Drive 32gb", price_of_record: 12000, max_duration: "13:33:33", capacity: 32000)
-    Carrier.create(name: "carrier6",                type_carrier: "Flash Drive 64gb", price_of_record: 24000, max_duration: "13:33:33", capacity: 64000)
+    Carrier.create(name: "2 albums of metallica")
+    Carrier.create(name: "collection")
+    Carrier.create(name: "collection2")
+    Carrier.create(name: "carrier4")
+    Carrier.create(name: "carrier5")
+    Carrier.create(name: "carrier6")
+
+    TypeCarrier.create(name: "Disk CD",          price_of_record: 500,   max_duration: "01:20:00", capacity: 700)
+    TypeCarrier.create(name: "Disk DVD",         price_of_record: 1500,  max_duration: "08:00:00", capacity: 4700)
+    TypeCarrier.create(name: "Flash Drive 8gb",  price_of_record: 3000,  max_duration: "13:33:33", capacity: 8000)
+    TypeCarrier.create(name: "Flash Drive 16gb", price_of_record: 6000,  max_duration: "00:00:01:03:33:33", capacity: 16000)
+    TypeCarrier.create(name: "Flash Drive 32gb", price_of_record: 12000, max_duration: "13:33:33", capacity: 32000)
+    TypeCarrier.create(name: "Flash Drive 64gb", price_of_record: 24000, max_duration: "13:33:33", capacity: 64000)

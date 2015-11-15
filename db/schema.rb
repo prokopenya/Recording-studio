@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101106011) do
+ActiveRecord::Schema.define(version: 20151101134934) do
 
   create_table "albums", force: :cascade do |t|
     t.string  "name",      limit: 255
@@ -32,18 +32,9 @@ ActiveRecord::Schema.define(version: 20151101106011) do
     t.string "last_name",  limit: 255
   end
 
-  create_table "base_orders", force: :cascade do |t|
-    t.string   "check",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "carriers", force: :cascade do |t|
     t.string  "name",            limit: 255
-    t.string  "type_carrier",    limit: 255
-    t.integer "price_of_record", limit: 4
-    t.time    "max_duration"
-    t.integer "capacity",        limit: 4
+    t.integer "type_carrier_id", limit: 4
   end
 
   create_table "genres", force: :cascade do |t|
@@ -72,6 +63,13 @@ ActiveRecord::Schema.define(version: 20151101106011) do
   add_index "tracks", ["artist_id"], name: "fk_rails_d99a0cbd74", using: :btree
   add_index "tracks", ["author_id"], name: "fk_rails_0f152fb47f", using: :btree
   add_index "tracks", ["genre_id"], name: "fk_rails_e21e3bd01e", using: :btree
+
+  create_table "type_carriers", force: :cascade do |t|
+    t.string  "name",            limit: 255
+    t.integer "price_of_record", limit: 4
+    t.time    "max_duration"
+    t.integer "capacity",        limit: 4
+  end
 
   add_foreign_key "albums", "artists"
   add_foreign_key "pre_orders", "carriers"

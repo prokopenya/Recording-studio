@@ -1,6 +1,5 @@
 class Track < ActiveRecord::Base
-  validates :name, presence: true,
-                        length: { minimum: 2 }
+  validates :name, length: { minimum: 2 }
   validates :duration, presence: true
 
   belongs_to :album

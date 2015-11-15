@@ -1,18 +1,11 @@
-<div id="logo">
-  <ul>
-    <li>
-      <a href = <%= 'http://localhost:3000' %>> SoundByte Studios </a>
-    </li>
-  </ul>
-</div>
 
-<div class="menu">
-  <%= render 'menu' %>
-</div>
-
-<%= netzke @table_name.to_sym, height: 500 %>
+<%= render 'menu' %>
 
 
+<%= netzke @table_name.to_sym, height: 610 %>
+
+
+<!--
 <section class="buttons">
   <ul>
     <li>
@@ -23,5 +16,6 @@
   </ul>
 </section>
 
-
 <%= text_area_tag(:message, @message, size: "100x20") %>
+
+-->

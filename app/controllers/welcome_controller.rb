@@ -8,13 +8,8 @@ class WelcomeController < ApplicationController
 
     @table_name = params[:id]
 
-    case params[:sql]
-    when '1'
-      @message = Artist.find(10).inspect
-    when '2'
-      @message = Track.where(in_orders: true).inspect
-    else
-    end
+    get_columns_from()
+
   end
 
   private
@@ -22,4 +17,19 @@ class WelcomeController < ApplicationController
       @tables = ActiveRecord::Base.connection.tables.map
       @tables = @tables.reject{|i| i == "schema_migrations"}
     end
+
+    def get_columns_from()
+      @models = []
+
+      @tables.each do |table|
+        @models << table.capitalize.singularize.camelize.constantize
+      end
+
+      @columns_name = []
+
+      @models.each do |model|
+        @columns_name << model.columns.map {|c| c.name }
+      end
+    end
+
 end

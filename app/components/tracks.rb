@@ -2,7 +2,7 @@ class Tracks < Netzke::Basepack::Grid
   def configure(c)
     super
     c.model = "Track"
-    c.bbar = [:add, :edit, :del, :add_in_form, :apply, :do_something]
+    c.bbar = [:add, :edit, :del, :add_in_form, :apply, :search, :do_something]
   end
 
 
@@ -12,7 +12,7 @@ class Tracks < Netzke::Basepack::Grid
                                                    SELECT id
                                                    FROM tracks
                                                    WHERE tracks.in_orders = 1")
-                                                   
+
     query2 = ActiveRecord::Base.connection.execute("UPDATE tracks SET in_orders = 0")
 
   end
@@ -26,4 +26,5 @@ class Tracks < Netzke::Basepack::Grid
   column :name do |c|
     c.flex = 1
   end
+
 end

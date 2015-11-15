@@ -1,8 +1,213 @@
+<div id='cssmenu'>
 <ul>
   <% @tables.each do |table| %>
     <li>
-      <a href = <%= 'http://localhost:3000/welcome/' + table.camelcase %>><%= table.camelcase %> </a>
+      <li class='active has-sub'><a href = <%= 'http://localhost:3000/welcome/' + table.camelcase %>><%= table.camelcase %> </a>
+        <% case table.camelcase %>
+        <% when 'Albums' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Artists</a>
+               <ul>
+                 <% Artist.find_each do |artist|%>
+                   <li><a href='#'><%= artist.name %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Name Album</a>
+               <ul>
+                 <% Album.find_each do |album|%>
+                   <li><a href='#'><%= album.name %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Released</a>
+               <ul>
+                 <li><a href='#'>1970-1980</a></li>
+                 <li><a href='#'>1980-1990</a></li>
+                 <li><a href='#'>1990-2000</a></li>
+                 <li><a href='#'>2010-2015</a></li>
+               </ul>
+             </li>
+          </ul>
+        <% when 'Artists' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Name</a>
+               <ul>
+                 <% Artist.find_each do |artist|%>
+                   <li><a href='#'><%= artist.name %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Country</a>
+               <ul>
+                 <% country_artist = Artist.select(:country).distinct %>
+                 <% country_artist.each do |artist|%>
+                   <li><a href='#'><%= artist.country %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Language song</a>
+               <ul>
+                 <% language_song = Artist.select(:language_song).distinct %>
+                 <% language_song.each do |artist|%>
+                   <li><a href='#'><%= artist.language_song %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+          </ul>
+
+        <% when 'Authors' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Id</a>
+               <ul>
+                 <% Author.find_each do |author|%>
+                   <li><a href='#'><%= author.id %></a>
+                     <ul>
+                         <li><a href='#'><%= author.first_name %></a>
+                         <li><a href='#'><%= author.last_name %></a>
+                     </ul>
+                   </li>
+                 <% end %>
+               </ul>
+             </li>
+          </ul>
+        <% when 'Carriers' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Name</a>
+               <ul>
+                 <% Carrier.find_each do |carrier|%>
+                   <li><a href='#'><%= carrier.name %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <%#
+             <li class='has-sub'><a href='#'>Type carrier</a>
+             </li>
+             %>
+          </ul>
+        <% when 'Genres' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Genre</a>
+               <ul>
+                 <% Genre.find_each do |genre|%>
+                   <li><a href='#'><%= genre.name %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+          </ul>
+        <% when 'Pre_orders' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Track name</a>
+             </li>
+             <li class='has-sub'><a href='#'>Carrier name</a>
+             </li>
+          </ul>
+        <% when 'Tracks' %>
+          <ul>
+             <li class='has-sub'><a href='#'>In orders</a>
+               <ul>
+                 <li class='has-sub'><a href='#'>Yes</a>
+                 <li class='has-sub'><a href='#'>No</a>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Name</a>
+             </li>
+             <li class='has-sub'><a href='#'>Durations</a>
+               <ul>
+                 <li class='has-sub'><a href='#'>1..2 minute</a>
+                 <li class='has-sub'><a href='#'>2..3 minutes</a>
+                 <li class='has-sub'><a href='#'>3..4 minutes</a>
+                 <li class='has-sub'><a href='#'>5..6 minutes</a>
+                 <li class='has-sub'><a href='#'>more than 6 minutes</a>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Album name</a>
+               <ul>
+                 <% album_name_track = Track.select(:album_id).distinct %>
+                 <% album_name_track.each do |track|%>
+                   <% Album.find_each do |album|%>
+                     <% if track.album_id == album.id %>
+                       <li><a href='#'><%= album.name %></a></li>
+                     <% end %>
+                   <% end %>
+                <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Genre name</a>
+               <ul>
+                 <% genre_name_track = Track.select(:genre_id).distinct %>
+                 <% genre_name_track.each do |track|%>
+                   <% Genre.find_each do |genre|%>
+                     <% if track.genre_id == genre.id %>
+                       <li><a href='#'><%= genre.name %></a></li>
+                     <% end %>
+                   <% end %>
+                <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Author</a>
+               <ul>
+                 <% author_name_track = Track.select(:author_id).distinct %>
+                 <% author_name_track.each do |track|%>
+                   <% Author.find_each do |author|%>
+                     <% if track.author_id == author.id %>
+                       <li><a href='#'><%= author.id %></a></li>
+                       <ul>
+                         <li><a href='#'><%= author.first_name %></a></li>
+                         <li><a href='#'><%= author.last_name %></a></li>
+                       </ul>
+                   <% end %>
+                 <% end %>
+              <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Artist name</a>
+               <ul>
+                 <% artist_name_track = Track.select(:artist_id).distinct %>
+                 <% artist_name_track.each do |track|%>
+                   <% Artist.find_each do |artist|%>
+                     <% if track.artist_id == artist.id %>
+                       <li><a href='#'><%= artist.name %></a></li>
+                     <% end %>
+                 <% end %>
+              <% end %>
+            </ul>
+             </li>
+          </ul>
+        <% when 'TypeCarriers' %>
+          <ul>
+             <li class='has-sub'><a href='#'>Name</a>
+               <ul>
+                 <% TypeCarrier.find_each do |type_carrier|%>
+                   <li><a href='#'><%= type_carrier.name %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Price of record</a>
+               <ul>
+                 <% TypeCarrier.find_each do |type_carrier|%>
+                   <li><a href='#'><%= type_carrier.price_of_record %></a></li>
+                 <% end %>
+              </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Max duration</a>
+               <ul>
+                 <% TypeCarrier.find_each do |type_carrier|%>
+                   <li><a href='#'><%= type_carrier.max_duration %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+             <li class='has-sub'><a href='#'>Capacity</a>
+               <ul>
+                 <% TypeCarrier.find_each do |type_carrier|%>
+                   <li><a href='#'><%= type_carrier.capacity %></a></li>
+                 <% end %>
+               </ul>
+             </li>
+           </ul>
+        <% end %>
       <span></span>
     </li>
   <% end %>
 </ul>
+</div>
