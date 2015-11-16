@@ -8,13 +8,12 @@
 
     Artist.create(name: "Scorpions",          country: "Germany",      language_song: "English")
     Artist.create(name: "Metallica",          country: "USA",          language_song: "English")
-    #Artist.create(name: "Rise Agains",        country: "USA",          language_song: "English")
     Artist.create(name: "New order",          country: "Great Britan", language_song: "English")
     Artist.create(name: "Rammstein",          country: "Germany",      language_song: "German")
     #Artist.create(name: "Accept",             country: "Germany",      language_song: "English")
     #Artist.create(name: "Appocalyptica",      country: "Finland",      language_song: "English")
     #Artist.create(name: "Children of Bodom",  country: "Finland",      language_song: "English")
-    #Artist.create(name: "Lordi",              country: "Finland",      language_song: "English")
+    Artist.create(name: "Lordi",              country: "Finland",      language_song: "English")
     Artist.create(name: "Eric Clapton",       country: "USA",          language_song: "English")
     Artist.create(name: "Johnny Cash",        country: "USA",          language_song: "English")
     Artist.create(name: "Bob Dylan",          country: "USA",          language_song: "English")
@@ -26,14 +25,15 @@
     Artist.create(name: "2pac",               country: "USA",          language_song: "English")
     #Artist.create(name: "DMX",                country: "USA",          language_song: "English")
     Artist.create(name: "Eminem",             country: "USA",          language_song: "English")
+    Artist.create(name: "Rise Agains",        country: "USA",          language_song: "English")
 
     #albums =  []
     Album.create(artist_id: 1,  name: "Blackout",                      released: "11-05-1982")
     Album.create(artist_id: 1,  name: "Return to Forever",             released: "14-08-2015")
     Album.create(artist_id: 2,  name: "Kill 'Em All'",                 released: "20-01-1983")
     Album.create(artist_id: 2,  name: "Ride the Lighthing",            released: "04-02-1984")
-    #Album.create(artist_id: 3,  name: "Endgame",                       released: "22-05-2011")
-    #Album.create(artist_id: 3,  name: "The Black Market",              released: "28-09-2014")
+    Album.create(artist_id: 21,  name: "Endgame",                       released: "22-05-2011")
+    Album.create(artist_id: 21,  name: "The Black Market",              released: "28-09-2014")
     Album.create(artist_id: 3,  name: "Music Complite",                released: "26-11-2015")
     Album.create(artist_id: 3,  name: "Brotherhood",                   released: "09-05-1986")
     Album.create(artist_id: 4,  name: "Mutter",                        released: "17-04-2001")
@@ -44,8 +44,8 @@
     #Album.create(artist_id: 7,  name: "Cult",                          released: "01-04-2000")
     #Album.create(artist_id: 8,  name: "Hate Crew Deathroll",           released: "05-12-2003")
     #Album.create(artist_id: 8,  name: "Follow the Reaper",             released: "08-06-2005")
-    #Album.create(artist_id: 9,  name: "The Arockalypse",               released: "16-08-2009")
-    #Album.create(artist_id: 9,  name: "Scare Force One",               released: "19-04-2014")
+    Album.create(artist_id: 9,  name: "The Arockalypse",               released: "16-08-2009")
+    Album.create(artist_id: 9,  name: "Scare Force One",               released: "19-04-2014")
     Album.create(artist_id: 5, name: "Unplugged",                     released: "07-03-1992")
     Album.create(artist_id: 5, name: "461 Ocean Boulevard",           released: "26-07-1974")
     #Album.create(artist_id: 11, name: "At Folsom Prison",              released: "07-10-1968")
@@ -108,9 +108,26 @@
     Track.create(name: "Rosenrot",                  duration: "00:04:42", album_id: 8, genre_id: 1, author_id: 1, artist_id: 4)
     Track.create(name: "Spring",                    duration: "00:02:32", album_id: 8, genre_id: 1, author_id: 1, artist_id: 4)
 
+    Track.create(name: "Hard Rock Hallelujah",      duration: "00:04:07", album_id: 9, genre_id: 1, author_id: 1, artist_id: 9)
+    Track.create(name: "Who’s Your Daddy?",         duration: "00:03:38", album_id: 9, genre_id: 1, author_id: 1, artist_id: 9)
+    Track.create(name: "It Snows in Hell",          duration: "00:03:37", album_id: 9, genre_id: 1, author_id: 1, artist_id: 9)
+    Track.create(name: "Supermonstars",             duration: "00:04:04", album_id: 9, genre_id: 1, author_id: 1, artist_id: 9)
+   
+    Track.create(name: "Scare Force One",           duration: "00:04:58", album_id: 10, genre_id: 1, author_id: 1, artist_id: 9)
+    Track.create(name: "She's a Demon",             duration: "00:05:37", album_id: 10, genre_id: 1, author_id: 1, artist_id: 9)
+    Track.create(name: "Monster is My Name",        duration: "00:03:35", album_id: 10, genre_id: 1, author_id: 1, artist_id: 9)
+    Track.create(name: "House of Ghosts",           duration: "00:04:12", album_id: 10, genre_id: 1, author_id: 1, artist_id: 9)
 
-
-
+    Track.create(name: "Endgame",                   duration: "00:03:24", album_id: 11, genre_id: 1, author_id: 1, artist_id: 21)
+    Track.create(name: "Make It Stop",              duration: "00:03:57", album_id: 11, genre_id: 1, author_id: 1, artist_id: 21)
+    Track.create(name: "Survivor Guilt",            duration: "00:04:00", album_id: 11, genre_id: 1, author_id: 1, artist_id: 21)
+    Track.create(name: "This Is Letting Go",        duration: "00:03:41", album_id: 11, genre_id: 1, author_id: 1, artist_id: 21)   
+   
+    Track.create(name: "The Great Die-Off",         duration: "00:03:39", album_id: 12, genre_id: 1, author_id: 1, artist_id: 21)
+    Track.create(name: "The Black Market",          duration: "00:04:15", album_id: 12, genre_id: 1, author_id: 1, artist_id: 21)
+    Track.create(name: "Methadone",                 duration: "00:03:38", album_id: 12, genre_id: 1, author_id: 1, artist_id: 21)
+    Track.create(name: "Tragedy + Time",            duration: "00:04:17", album_id: 12, genre_id: 1, author_id: 1, artist_id: 21)
+   
     Carrier.create(name: "2 albums of metallica")
     Carrier.create(name: "collection")
     Carrier.create(name: "collection2")
