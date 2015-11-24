@@ -1,4 +1,6 @@
+
 class Albums < Netzke::Basepack::Grid
+
   def configure(c)
     super
     c.model = "Album"
@@ -11,9 +13,6 @@ class Albums < Netzke::Basepack::Grid
   end
 
   column :name do |c|
-    c.flex = 1
-  end
-  column :artist_name do |c|
     c.flex = 1
   end
 end

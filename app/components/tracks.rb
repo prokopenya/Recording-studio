@@ -1,8 +1,26 @@
 class Tracks < Netzke::Basepack::Grid
+
   def configure(c)
+
     super
     c.model = "Track"
-    c.bbar = [:add, :edit, :del, :add_in_form, :apply, :search, :do_something]
+    c.columns = [
+      # you may configure columns inline like this:
+      {
+        :name => :in_orders,
+        :width => 50
+      },
+      :name,
+      { :name => :duration,
+        :width => 200,
+        :format => 'Y-m-d\TH:i:sP'
+      },
+      #{ name: :duration, format: 'g:i:s' },
+      { name: :artist__name, text: "Artist name" },
+      { name: :album__name, text: "Album name" },
+      { name: :genre__name, text: "Genre name" },
+      :author__name
+    ]
   end
 
 
@@ -17,11 +35,6 @@ class Tracks < Netzke::Basepack::Grid
 
   end
 
-  action :do_something do |c|
-    c.text = c.tooltip = "My cool action"
-
-    #PreOrder.connection.update_all("UPDATE in_orders, name FROM tracks WHERE in_orders = true AND name != null")
-  end
 
   column :name do |c|
     c.flex = 1

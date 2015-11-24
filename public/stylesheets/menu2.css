@@ -16,26 +16,11 @@
   margin: 0;
   padding: 0;
 }
-#cssmenu nav1 { 
-    width:100%;
-}
-#cssmenu nav2 { 
-    float:right;
-    right:50%;
-    position:relative;
-}
-#cssmenu nav2 ul { 
-    float:left;
-    left:50%;
-    position:relative;
-}
+
 #cssmenu ul li {
   display:inline;
 }
-#cssmenu li {
-  float: left;
-  padding: 0px;
-}
+#cssmenu li { display:inline-block;*display:inline;}
 #cssmenu li a {
   background: #333333 url("images/seperator.gif") bottom right no-repeat;
   display: block;

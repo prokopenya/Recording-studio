@@ -1,3 +1,14 @@
+<script>
+function window()
+{
+    Ext.Msg.show({
+    title: "Details",
+    width: 1500,
+    height: 800,
+  });});
+}
+</script>
+<% %>
 <div id='cssmenu'>
 <ul>
   <% @tables.each do |table| %>
@@ -9,7 +20,7 @@
              <li class='has-sub'><a href='#'>Artists</a>
                <ul>
                  <% Artist.find_each do |artist|%>
-                   <li><a href='#'><%= artist.name %></a></li>
+                   <li><a onclick='Ext.Msg.show("<% @query %>")'><%= artist.name %></a></li>
                  <% end %>
                </ul>
              </li>
@@ -205,6 +216,7 @@
                </ul>
              </li>
            </ul>
+           <li class='active has-sub'><a href = <%= 'http://localhost:3000/welcome/MainPanel' %>><%= MainPanel %> </a>
         <% end %>
       <span></span>
     </li>

@@ -1,15 +1,13 @@
 class WelcomeController < ApplicationController
+
   def index
     get_tables()
   end
 
   def show
     get_tables()
-
     @table_name = params[:id]
-
     get_columns_from()
-
   end
 
   private
@@ -30,6 +28,7 @@ class WelcomeController < ApplicationController
       @models.each do |model|
         @columns_name << model.columns.map {|c| c.name }
       end
+
     end
 
 end

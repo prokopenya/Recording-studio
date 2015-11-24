@@ -1,20 +1,6 @@
 <div id='cssmenu'>
 <ul>
-  <% @tables.each do |table| %>
-    <li>
-      <li class='active has-sub'><a href = <%= 'http://localhost:3000/welcome/' + table.camelcase %>><%= table.camelcase %> </a>
-        <% case table.camelcase %>
-        <% when 'Albums' %>
-        <% when 'Artists' %>
-        <% when 'Authors' %>
-        <% when 'Carriers' %>
-        <% when 'Genres' %>
-        <% when 'Pre_orders' %>
-        <% when 'Tracks' %>
-        <% when 'TypeCarriers' %>
-        <% end %>
+      <li class='active has-sub'><a href = 'http://localhost:3000/welcome/MainPanel'> MainPanel </a>
       <span></span>
-    </li>
-  <% end %>
 </ul>
 </div>
