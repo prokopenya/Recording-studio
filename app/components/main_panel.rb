@@ -31,10 +31,22 @@ class MainPanel < Netzke::Basepack::Viewport
 
   component :main_tab do |c|
     c.klass = MainTab
-    c.flex = 7
+    c.flex = 4.8
   end
 
   component :window_one do |c|
+    c.klass = WindowOne
+  end
+
+  component :window_two do |c|
+    c.klass = WindowOne
+  end
+
+  component :window_thee do |c|
+    c.klass = WindowOne
+  end
+
+  component :window_four do |c|
     c.klass = WindowOne
   end
 
@@ -48,15 +60,18 @@ class MainPanel < Netzke::Basepack::Viewport
 
   def menu
     {
-      :text => "Windows",
+      :text => "Выборка по времени",
       :expanded => true,
-      :children => [leaf("Number One", :window_one)]
+      :children => [leaf("Треки длиной 1-2 минуты", :window_one),
+                    leaf("Треки длиной 2-3 минуты", :window_two),
+                    leaf("Треки длиной 3-4 минуты", :window_thee),
+                    leaf("Треки длиной >4 минут"  , :window_four)
+                  ]
     }
   end
 end
 
 class MainTab < Netzke::Basepack::TabPanel
-
 
   component :albums do |c|
     c.klass = Albums
@@ -86,6 +101,7 @@ class MainTab < Netzke::Basepack::TabPanel
 
   component :pre_orders do |c|
     c.klass = PreOrders
+    c.height = 620
   end
 
   component :type_carriers do |c|
@@ -112,9 +128,14 @@ class MainTab < Netzke::Basepack::TabPanel
     c.title = "Tracks and Genres"
   end
 
+  component :albums_genres do |c|
+    c.klass = AlbumsGenres
+    c.title = "Albums and Genres"
+  end
+
   def configure(c)
     super
-    c.items = [:tracks_genres, :tracks_artists, :tracks_albums, :albums_artists, :albums,
+    c.items = [:tracks_genres, :tracks_artists, :tracks_albums, :albums_artists,:albums,
                :artists, :authors, :genres, :tracks, :pre_orders, :carriers, :type_carriers]
   end
 end

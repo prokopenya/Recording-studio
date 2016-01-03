@@ -6,7 +6,7 @@ class CreateCarriers < ActiveRecord::Migration
       #t.integer :price_of_record
       #t.time :max_duration
       #t.integer :capacity
-      #t.timestamps null: false
+      t.timestamps null: false, created_at: true, updated_at: false
       t.belongs_to :type_carrier
     end
   end

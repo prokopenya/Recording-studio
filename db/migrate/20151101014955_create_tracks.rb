@@ -3,7 +3,7 @@ class CreateTracks < ActiveRecord::Migration
     create_table :tracks do |t|
       t.boolean :in_orders
       t.string :name
-      t.time :duration
+      t.integer :duration
 
 
       t.belongs_to :album

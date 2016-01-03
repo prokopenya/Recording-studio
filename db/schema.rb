@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101134938) do
+ActiveRecord::Schema.define(version: 20151101134955) do
 
   create_table "albums", force: :cascade do |t|
     t.string  "name",      limit: 255
@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 20151101134938) do
   end
 
   create_table "carriers", force: :cascade do |t|
-    t.string  "name",            limit: 255
-    t.integer "type_carrier_id", limit: 4
+    t.string   "name",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "type_carrier_id", limit: 4
   end
 
   create_table "genres", force: :cascade do |t|
@@ -52,7 +54,7 @@ ActiveRecord::Schema.define(version: 20151101134938) do
   create_table "tracks", force: :cascade do |t|
     t.boolean "in_orders"
     t.string  "name",      limit: 255
-    t.time    "duration"
+    t.integer "duration",  limit: 4
     t.integer "album_id",  limit: 4
     t.integer "genre_id",  limit: 4
     t.integer "author_id", limit: 4
@@ -67,7 +69,7 @@ ActiveRecord::Schema.define(version: 20151101134938) do
   create_table "type_carriers", force: :cascade do |t|
     t.string  "name",            limit: 255
     t.integer "price_of_record", limit: 4
-    t.time    "max_duration"
+    t.integer "max_duration",    limit: 4
     t.integer "capacity",        limit: 4
   end
 

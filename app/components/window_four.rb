@@ -9,6 +9,6 @@ class WindowOne < Netzke::Basepack::Window
   end
 
   component :tracks do |c|
-    c.scope = ->(rel) { rel.where("duration BETWEEN 60 AND 120 ") }
+    c.scope = ->(rel) { rel.where("duration > 240) }
   end
 end
